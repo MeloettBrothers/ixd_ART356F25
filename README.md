@@ -1,4 +1,4 @@
-# Welcome to Adrian Casarez Repo!
+# Welcome to Adrian Repo!
 
 Hey this is some placeholder text for now
 
