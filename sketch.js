@@ -34,7 +34,7 @@ function draw() {
   image(bg, 0, 0, width, height);
 
   // keep shuffling character until user presses Stop
-  if (shuffle && frameCount % 30 === 0) pickRandomAnimal();
+  if (shuffle && frameCount % 60 === 0) pickRandomAnimal();
 
   // draw the chosen character
   if (animal === 1) image(sonic, 50, 50, 400, 400);
