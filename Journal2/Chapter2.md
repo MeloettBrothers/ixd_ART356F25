@@ -7,5 +7,5 @@ designers understand why users do what they do.
 I found it interesting that design should make the 
 right actions obvious and the wrong ones difficult. 
 When users fail, it usually means the design failed to communicate clearly. Everyday examples, like confusing doors or unclear buttons, show how critical visibility and feedback are in good design. 
-The concept of mapping—how controls relate to their results—also stood out to me, because it connects mental models to real world understanding. 
+The concept of mapping how controls relate to their results also stood out to me, because it connects mental models to real world understanding. 
 This chapter reminded me that good design supports human thought, not the other way around, and that usability depends on empathy and anticipation of user needs.
