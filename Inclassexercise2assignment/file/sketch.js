@@ -1,37 +1,28 @@
-let data;
-let url =  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQADMbvtgD_CBG5kIv64DtRNuqYIooQd5F0QiJWi46L2A96U_xoHd-oe-bxMO6rqCMcMsAKKA9H2PF5/pub?gid=0&single=true&output=csv";
-
-function preload() {
-  data = loadTable(url, "csv", "header");
-}
+let weather;
 
 function setup() {
   createCanvas(400, 400);
+  loadJSON(
+    "https://api.open-meteo.com/v1/forecast?latitude=37.6688&longitude=-122.0808&current=temperature_2m&hourly=temperature_2m&temperature_unit=fahrenheit&wind_speed_unit=mph&precipitation_unit=inch&timeformat=unixtime",
+    gotData
+  );
+}
+
+function gotData(data) {
+  weather = data;
 }
 
 function draw() {
-  background(0);
+  background(220);
 
-  if (data) {
-    let numRows = data.getRowCount();
-    let carbs = data.getColumn("Carbs");
-    let names = data.getColumn("Food");
+  if (weather) {
+    fill(255);
+    textSize(30);
+    textAlign(CENTER);
+    text(weather.current.time, 200, 100);
+    text(weather.current.temperature_2m + "F", 200, 300);
 
-    for (let i = 0; i < numRows; i++) {
-      let x = 50;
-      let y = 100 + i * 50;
-      let w = carbs[i];
-      let h = 10;
-
-      rect(x, y, w, h);
-
-      textAlign(LEFT);
-      fill(255);
-      textSize(14);
-      text(names[i], x, y - 5);
-
-      textAlign(CENTER);
-      text("Carbs of Food Items", width / 2, 50);
-    }
+    fill(weather.current.temperature_2m, 0, 0);
+    ellipse(200, 200, weather.current.temperature_2m);
   }
 }
