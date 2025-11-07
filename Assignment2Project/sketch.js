@@ -71,7 +71,7 @@ function drawDetail() {
 function drawGrid() {
   fill(255); noStroke();
   textStyle(BOLD);
-  text("Puyo Puyo Characters", GRID.left, 35);
+  text("Puyo Puyo Characters Beta WIP", GRID.left, 35);
   textStyle(NORMAL);
 
   for (let i = 0; i < data.data.length; i++) {
